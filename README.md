@@ -3,7 +3,7 @@
 A project to help catalog and relate various early Church texts and documents.
 
 ### Rust, ElasticSearch, and Postgres.
-Implementation and Rust, ElasticSearch, and Postgres.
+Implementation in Rust, ElasticSearch, and Postgres.
 
 
 The idea is to eventualy write an API and Web UI front end to process and present a trove of information relating books and documents together. Enabling simple search and relationship drilling.
