@@ -1,6 +1,6 @@
 ## solaSearch
 
-A project to help catalog and relate various early Church texts and documents.
+A project to help catalog and relate various early Church texts and documents. These documents are hard to find and discover across the world wide web, the aim to not only to gather them into a single spot, but to present them in such a way as they can be related together and searched in a user friendly way.
 
 ### Rust, ElasticSearch, and Postgres.
 Implementation in Rust, ElasticSearch, and Postgres.
