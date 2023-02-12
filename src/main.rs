@@ -11,7 +11,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         uri: "https://www.gutenberg.org/files/".to_string()
     };
     let content = book.download_book();
-    println!("{:?}", content.await);
+    //println!("{:?}", content.await);
+    let new_book: String = Book::remove_gutenberg_text(content.await);
+    println!("{}", new_book);
     Ok(())
 }
 
@@ -34,6 +36,14 @@ impl Book {
         .text()
         .await.unwrap();
         return content;
+    }
+
+    fn remove_gutenberg_text(raw_book: String) -> String {
+        // We must strip away all references to Project Gutenberg to use this content as we wish.
+        // This is legitimate and allowed by Project Gutenberg.
+        let start_removed: &str = raw_book.split("*** START OF THIS PROJECT GUTENBERG EBOOK").nth(1).unwrap();
+        let end_removed: &str= start_removed.split("End of the Project Gutenberg EBook").nth(0).unwrap();
+        return end_removed.to_owned();
     }
 }
 
